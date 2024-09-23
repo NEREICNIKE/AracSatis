@@ -1,0 +1,80 @@
+﻿@model IEnumerable<AracSatis.Models.Entities.Satis>
+
+
+@{
+    ViewBag.Title = "Satislar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<div class="content">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    <div class="container-fluid" style="margin-top: 20px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Satış Tablosu</h3>
+                    </div>
+                    <div class="card-body table-responsive p-0" style="height: 300px;">
+                        <table class="table table-head-fixed text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Alıcı Adı Soyadı
+                                    </th>
+                                    <th>
+                                        Araç Marka Model
+                                    </th>
+                                    <th>
+                                        Teslimat Türü
+                                    </th>
+                                    <th>
+                                        Satış Fiyatı
+                                    </th>
+                                    <th>
+                                        Satış Tarihi
+                                    </th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Kullanici.ad)
+                                            @Html.DisplayFor(modelItem => item.Kullanici.soyad)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Arac.Marka.markaAdi)
+                                            @Html.DisplayFor(modelItem => item.Arac.aciklama)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Teslimat.teslimatTuru)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.fiyat)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.satisTarihi)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Sil", "SatisSil", new { id = item.satisID })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

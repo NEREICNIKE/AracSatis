@@ -1,0 +1,97 @@
+﻿@model IEnumerable<AracSatis.Models.Entities.Arac>
+
+
+@{
+    ViewBag.Title = "AracDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<div class="content">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    else if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    <div class="container-fluid" style="margin-top: 20px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Araç Tablosu</h3>
+                    </div>
+                    <div class="card-body table-responsive p-0" style="height: 300px;">
+                        <table class="table table-head-fixed text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Araç Markası
+                                    </th>
+                                    <th>
+                                        Araç Modeli
+                                    </th>
+                                    <th>
+                                        Araç Rengi
+                                    </th>
+                                    <th>
+                                        Araç Şanzıman Türü
+                                    </th>
+                                    <th>
+                                        Araç Model Yılı
+                                    </th>
+                                    <th>
+                                        Araç Satış Fiyatı
+                                    </th>
+                                    <th>
+                                        Adet
+                                    </th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Marka.markaAdi)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.aciklama)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Renk.renkAdi)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sanziman.sanzimanTuru)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.modelYili)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.satisFiyati)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.adet)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Güncelle", "AracGuncelle", new { id = item.aracID }) |
+                                            @Html.ActionLink("Sil", "AracSil", new { id = item.aracID })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "KayitOl";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sifre Sifirlama</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="~/Theme/AdminPanel/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Theme/AdminPanel/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="~/Theme/AdminPanel/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="#" class="h1"><b>CARVILLA</b></a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Kayıt Ol</p>
+
+                <form action="@Url.Action("KayitOl", "Login")" method="post" class="form">
+                    @if (TempData["ErrorMessageKayit"] != null)
+                    {
+                        <div class="alert alert-danger">
+                            @TempData["ErrorMessageKayit"]
+                        </div>
+                    }
+                    <div class="container-fluid" style="margin-bottom: 30px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputText1">Ad</label>
+                                    <input type="text" class="form-control" id="ad" name="ad" tabindex="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputText3">Kullanıcı Adı</label>
+                                    <input type="text" class="form-control" id="kullaniciAdi" name="kullaniciAdi" tabindex="3">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputText5">TC Kimlik Numarası</label>
+                                    <input type="text" class="form-control" id="tcNo" name="tcNo" tabindex="5">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputText2">Soyad</label>
+                                    <input type="text" class="form-control" id="soyad" name="soyad" tabindex="2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputText4">Şifre</label>
+                                    <input type="password" class="form-control" id="sifre" name="sifre" tabindex="4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputText6">Telefon Numarası</label>
+                                    <input type="text" class="form-control" id="telefon" name="telefon" tabindex="6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="adres">Adres</label>
+                                    <textarea class="form-control" id="adres" name="adres" rows="3" tabindex="7"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 text-left">
+                                <a href=@Url.Action("Index", "Login") class="text-center" tabindex="9">Geri Dön</a>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <button type="submit" class="btn btn-primary" tabindex="8">Kayıt Ol</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/Theme/AdminPanel/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Theme/AdminPanel/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Theme/AdminPanel/dist/js/adminlte.min.js"></script>
+</body>
+</html>

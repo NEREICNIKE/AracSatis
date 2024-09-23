@@ -1,0 +1,53 @@
+﻿@model AracSatis.Models.Entities.Arac
+
+@{
+    ViewBag.Title = "AracGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<div class="content">
+    <form action="@Url.Action("AracGuncelle", "Admin")" method="post" class="form">
+        <div class="container-fluid" style="margin-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.HiddenFor(model => model.aracID)
+                    <div class="form-group">
+                        <label for="exampleInputText1">Araç Markası</label>
+                        @Html.EditorFor(model => model.Marka.markaAdi, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText3">Araç Rengi</label>
+                        @Html.EditorFor(model => model.Renk.renkAdi, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText5">Araç Model Yılı</label>
+                        @Html.EditorFor(model => model.modelYili, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText7">Adet</label>
+                        @Html.EditorFor(model => model.adet, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputText2">Araç Modeli</label>
+                        @Html.EditorFor(model => model.aciklama, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText4">Araç Şanzıman Türü</label>
+                        @Html.EditorFor(model => model.Sanziman.sanzimanTuru, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText6">Satış Fiyatı</label>
+                        @Html.EditorFor(model => model.satisFiyati, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Araç Bilgilerini Güncelle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

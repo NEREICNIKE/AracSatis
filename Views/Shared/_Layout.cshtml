@@ -1,0 +1,326 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="tr">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+
+    <!-- title of site -->
+    <title>CarVilla</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="~/Theme/Carvilla/assets/logo/favicon.png" />
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/font-awesome.min.css">
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/linearicons.css">
+
+    <!--flaticon.css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/flaticon.css">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/animate.css">
+
+    <!--owl.carousel.css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/owl.theme.default.min.css">
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/bootstrap.min.css">
+
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/bootsnav.css">
+
+    <!--style.css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/style.css">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="~/Theme/Carvilla/assets/css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <!--welcome-hero start -->
+    <section id="home" class="welcome-hero">
+        <!-- top-area Start -->
+        <div class="top-area">
+            <div class="header-area">
+                <!-- Start Navigation -->
+                <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+                    <div class="container">
+
+                        <!-- Start Header Navigation -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <a class="navbar-brand" href="/Home">carvilla<span></span></a>
+
+                        </div><!--/.navbar-header-->
+                        <!-- End Header Navigation -->
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                <li class=" scroll active"><a href="#home">anasayfa</a></li>
+                                <li class="scroll"><a href="#featured-cars">araçlarımız</a></li>
+                                <li class="scroll"><a href="#brand">markalar</a></li>
+                                <li class="scroll"><a href="#contact">iletişim</a></li>
+                                <li class="nav-link"><a href="@Url.Action("Cikis", "Home")">çıkış</a></li>
+                            </ul><!--/.nav -->
+                        </div><!-- /.navbar-collapse -->
+                    </div><!--/.container-->
+                </nav><!--/nav-->
+                <!-- End Navigation -->
+            </div><!--/.header-area-->
+            <div class="clearfix"></div>
+
+        </div><!-- /.top-area-->
+        <!-- top-area End -->
+
+        <div class="container">
+            <div class="welcome-hero-txt">
+                <h2>istediğiniz aracı uygun fiyata alın</h2>
+                <p>
+                    Hayalinizdeki araca sahip olmak artık çok kolay. Sitemizdeki araçları inceleyin ve uygun fiyatlarla sahip olun.
+                </p>
+            </div>
+        </div>
+
+    </section><!--/.welcome-hero-->
+    <!--welcome-hero end -->
+    @RenderBody()
+
+    <!--featured-cars start -->
+    <!--/.featured-cars-->
+    <!--featured-cars end -->
+    <!-- clients-say strat -->
+    <section id="clients-say" class="clients-say">
+        <div class="container">
+            <div class="section-header">
+                <h2>müşterilerimiz ne diyor</h2>
+            </div><!--/.section-header-->
+            <div class="row">
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="single-testimonial-box">
+                            <div class="testimonial-description">
+                                <div class="testimonial-info">
+                                    <div class="testimonial-img">
+                                        <img src="~/Theme/Carvilla/assets/images/clients/c1.png" alt="image of clients person" />
+                                    </div><!--/.testimonial-img-->
+                                </div><!--/.testimonial-info-->
+                                <div class="testimonial-comment">
+                                    <p>
+                                        Carvilla sayesinde hayal ettiğim araca kolayca ulaştım. Site kullanımı çok kolay ve araçların detaylı bilgileri gerçekten karar vermemi kolaylaştırdı. Ayrıca müşteri hizmetleri ekibi de çok yardımcı oldu. Kesinlikle tavsiye ederim!
+                                    </p>
+                                </div><!--/.testimonial-comment-->
+                                <div class="testimonial-person">
+                                    <h2><a href="#">tayfur bingöl</a></h2>
+                                    <h4>adana</h4>
+                                </div><!--/.testimonial-person-->
+                            </div><!--/.testimonial-description-->
+                        </div><!--/.single-testimonial-box-->
+                    </div><!--/.col-->
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="single-testimonial-box">
+                            <div class="testimonial-description">
+                                <div class="testimonial-info">
+                                    <div class="testimonial-img">
+                                        <img src="~/Theme/Carvilla/assets/images/clients/c2.png" alt="image of clients person" />
+                                    </div><!--/.testimonial-img-->
+                                </div><!--/.testimonial-info-->
+                                <div class="testimonial-comment">
+                                    <p>
+                                        Carvilla'da istediğim markanın en yeni modelini bulmak çok kolay oldu. Site çok kullanıcı dostu ve araç bilgileri eksiksiz. Ayrıca, araçların fiyatları da oldukça makul. Siteye ve hizmetine bayıldım!
+                                    </p>
+                                </div><!--/.testimonial-comment-->
+                                <div class="testimonial-person">
+                                    <h2><a href="#">zeynep tok</a></h2>
+                                    <h4>istanbul</h4>
+                                </div><!--/.testimonial-person-->
+                            </div><!--/.testimonial-description-->
+                        </div><!--/.single-testimonial-box-->
+                    </div><!--/.col-->
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="single-testimonial-box">
+                            <div class="testimonial-description">
+                                <div class="testimonial-info">
+                                    <div class="testimonial-img">
+                                        <img src="~/Theme/Carvilla/assets/images/clients/c3.png" alt="image of clients person" />
+                                    </div><!--/.testimonial-img-->
+                                </div><!--/.testimonial-info-->
+                                <div class="testimonial-comment">
+                                    <p>
+                                        Yeni bir araç almak için bu siteyi kullandım ve sürecin her adımında çok memnun kaldım. Araç bilgileri, fiyatlar ve kullanıcı yorumları sayesinde bilinçli bir tercih yapabildim. Site gerçekten harika ve kullanımı çok rahat. Teşekkürler!
+                                    </p>
+                                </div><!--/.testimonial-comment-->
+                                <div class="testimonial-person">
+                                    <h2><a href="#">ali nazik</a></h2>
+                                    <h4>ankara</h4>
+                                </div><!--/.testimonial-person-->
+                            </div><!--/.testimonial-description-->
+                        </div><!--/.single-testimonial-box-->
+                    </div><!--/.col-->
+                </div><!--/.testimonial-carousel-->
+            </div><!--/.row-->
+        </div><!--/.container-->
+
+    </section><!--/.clients-say-->
+    <!-- clients-say end -->
+    <!--brand strat -->
+    <section id="brand" class="brand">
+        <div class="container">
+            <div class="brand-area">
+                <div class="owl-carousel owl-theme brand-item">
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/Theme/Carvilla/assets/images/brand/Audi.png" alt="brand-image" />
+                        </a>
+                    </div><!--/.item-->
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/Theme/Carvilla/assets/images/brand/Lamborghini.png" alt="brand-image" />
+                        </a>
+                    </div><!--/.item-->
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/Theme/Carvilla/assets/images/brand/Porsche.png" alt="brand-image" />
+                        </a>
+                    </div><!--/.item-->
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/Theme/Carvilla/assets/images/brand/Skoda.png" alt="brand-image" />
+                        </a>
+                    </div><!--/.item-->
+
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/Theme/Carvilla/assets/images/brand/Volkswagen.png" alt="brand-image" />
+                        </a>
+                    </div><!--/.item-->
+                </div><!--/.owl-carousel-->
+            </div><!--/.clients-area-->
+
+        </div><!--/.container-->
+
+    </section><!--/brand-->
+    <!--brand end -->
+    <!--blog start -->
+    <section id="blog" class="blog"></section><!--/.blog-->
+    <!--blog end -->
+    <!--contact start-->
+    <footer id="contact" class="contact">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html">carvilla</a>
+                            </div>
+                            <p>
+                                Geçmişten gelen deneyimimizle sizlere en iyi hizmeti sunmaktayız.
+                            </p>
+                            <div class="footer-contact">
+                                <p>ekinciieren7@gmail.com</p>
+                                <p>+90 (551) 9684375</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <div class="single-footer-widget">
+                            <h2>markalarımız</h2>
+                            <div class="row">
+                                <div class="col-md-5 col-xs-6">
+                                    <ul>
+                                        <li><a href="#">Audi</a></li>
+                                        <li><a href="#">lamborghini</a></li>
+                                        <li><a href="#">Porsche</a></li>
+                                        <li><a href="#">Skoda</a></li>
+                                        <li><a href="#">Volkswagen</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>
+                            &copy; copyright.designed and developed by NEREICNIKE
+                        </p><!--/p-->
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="footer-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.footer-copyright-->
+        </div><!--/.container-->
+
+        <div id="scroll-Top">
+            <div class="return-to-top">
+                <i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+            </div>
+
+        </div><!--/.scroll-Top-->
+
+    </footer><!--/.contact-->
+    <!--contact end-->
+    <!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+    <script src="~/Theme/Carvilla/assets/js/jquery.js"></script>
+
+    <!--modernizr.min.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <!--bootstrap.min.js-->
+    <script src="~/Theme/Carvilla/assets/js/bootstrap.min.js"></script>
+
+    <!-- bootsnav js -->
+    <script src="~/Theme/Carvilla/assets/js/bootsnav.js"></script>
+
+    <!--owl.carousel.js-->
+    <script src="~/Theme/Carvilla/assets/js/owl.carousel.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!--Custom JS-->
+    <script src="~/Theme/Carvilla/assets/js/custom.js"></script>
+
+</body>
+
+</html>

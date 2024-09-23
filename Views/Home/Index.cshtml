@@ -1,0 +1,110 @@
+﻿@model AracSatis.Models.AracViewModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="home" class="welcome-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="model-search-content">
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                    {
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-2 col-sm-6">
+                                <div class="single-model-search">
+                                    <h2>Yılı</h2>
+                                    <div class="model-select-icon">
+                                        @Html.DropDownListFor(m => m.SelectedYear, new SelectList(Model.Years, "Yıl"), "yıl", new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-6">
+                                <div class="single-model-search">
+                                    <h2>Rengi</h2>
+                                    <div class="model-select-icon">
+                                        @Html.DropDownListFor(m => m.SelectedColor, new SelectList(Model.Colors, "Renk"), "renk", new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-6">
+                                <div class="single-model-search">
+                                    <h2>Markası</h2>
+                                    <div class="model-select-icon">
+                                        @Html.DropDownListFor(m => m.SelectedBrand, new SelectList(Model.Brands, "Marka"), "marka", new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-6">
+                                <div class="single-model-search">
+                                    <h2>Şanzıman Türü</h2>
+                                    <div class="model-select-icon">
+                                        @Html.DropDownListFor(m => m.SelectedGearbox, new SelectList(Model.Gearboxs, "Şanzıman"), "şanzıman", new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-model-search text-center">
+                            <button type="submit" class="welcome-btn model-search-btn">
+                                ara
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service" class="service">
+</section>
+
+<section id="featured-cars" class="featured-cars">
+    <div class="container">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        else if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+        <div class="section-header">
+            <p>kaliteli araçlara göz atın</p>
+            <h2>araçlarımız</h2>
+        </div><!--/.section-header-->
+        <div class="featured-cars-content">
+            <div class="row">
+                @foreach (var arac in Model.Araclar)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-featured-cars">
+                            <div class="featured-img-box">
+                                <div class="featured-cars-img">
+                                    <img src="data:image/png;base64,@Convert.ToBase64String(arac.resim)" alt="aracResim">
+                                </div>
+                                <div class="featured-model-info">
+                                    <p>
+                                        renk: @arac.Renk.renkAdi
+                                        <span class="featured-mi-span"> yılı: @arac.modelYili</span>
+                                        <span class="featured-mi-span"> @arac.Sanziman.sanzimanTuru</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="featured-cars-txt">
+                                <h2><a href="/Home/AracAl/@arac.aracID">@arac.Marka.markaAdi @arac.aciklama</a></h2>
+                                <h3>@String.Format("{0:C}", arac.satisFiyati)</h3>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div><!--/.container-->
+</section><!--/.featured-cars-->

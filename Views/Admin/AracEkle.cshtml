@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "AracEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<div class="content">
+    <form action="@Url.Action("AracEkle", "Admin")" method="post" class="form" enctype="multipart/form-data">
+        @if (TempData["SuccessMessageEkleme"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessageEkleme"]
+            </div>
+        }
+        else if (TempData["ErrorMessageEkleme"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessageEkleme"]
+            </div>
+        }
+        <div class="container-fluid" style="margin-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputText1">Araç Markası</label>
+                        <select id="markaID" name="markaID" class="form-control select2bs4" style="width: 100%;">
+                            <option selected="selected">Seçiniz</option>
+                            @foreach (var item in ViewBag.Marka)
+                            {
+                                <option value="@item.markaID" data-tur="@item.markaID">@item.markaAdi</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText3">Araç Rengi</label>
+                        <select id="renkID" name="renkID" class="form-control select2bs4" style="width: 100%;">
+                            <option selected="selected">Seçiniz</option>
+                            @foreach (var item in ViewBag.Renk)
+                            {
+                                <option value="@item.renkID" data-tur="@item.renkID">@item.renkAdi</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText5">Araç Model Yılı</label>
+                        <input type="text" class="form-control" id="modelYili" name="modelYili">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText7">Adet</label>
+                        <input type="text" class="form-control" id="adet" name="adet">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputText2">Arac Modeli</label>
+                        <input type="text" class="form-control" id="aciklama" name="aciklama">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText4">Araç Şanzıman Türü</label>
+                        <select id="sanzimanID" name="sanzimanID" class="form-control select2bs4" style="width: 100%;">
+                            <option selected="selected">Seçiniz</option>
+                            @foreach (var item in ViewBag.Sanziman)
+                            {
+                                <option value="@item.sanzimanID" data-tur="@item.sanzimanID">@item.sanzimanTuru</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText6">Satış Fiyatı</label>
+                        <input type="text" class="form-control" id="satisFiyati" name="satisFiyati">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Araç Resmi</label>
+                        <input type="file" class="form-control" id="resim" name="resim" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Araç Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

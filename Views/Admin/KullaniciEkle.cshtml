@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "KullaniciEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<div class="content">
+    <form action="@Url.Action("KullaniciEkle", "Admin")" method="post" class="form">
+        @if (TempData["SuccessMessageEkleme"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["SuccessMessageEkleme"]
+            </div>
+        }
+        else if (TempData["ErrorMessageEkleme"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessageEkleme"]
+            </div>
+        }
+        <div class="container-fluid" style="margin-bottom: 30px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputText1">Ad</label>
+                        <input type="text" class="form-control" id="ad" name="ad"> @*Name özelliği, sunucuya gönderilen verilerin anahtarını belirtir*@
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText5">Kullanıcı Adı</label>
+                        <input type="text" class="form-control" id="kullaniciAdi" name="kullaniciAdi">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText4">TC Kimlik Numarası</label>
+                        <input type="text" class="form-control" id="tcNo" name="tcNo">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText3">Adres</label>
+                        <input type="text" class="form-control" id="adres" name="adres">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputText2">Soyad</label>
+                        <input type="text" class="form-control" id="soyad" name="soyad">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText6">Şifre</label>
+                        <input type="text" class="form-control" id="sifre" name="sifre">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText4">Telefon Numarası</label>
+                        <input type="text" class="form-control" id="telefon" name="telefon">
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Kullancı Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
